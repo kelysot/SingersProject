@@ -1,8 +1,6 @@
 from flask import Blueprint, render_template, request, redirect
 from flask_bcrypt import Bcrypt
 from services.user import login_service, register_service, logout_service
-from models import User, Comment, Singer, Album
-from database import db
 
 user_bp = Blueprint('user', __name__)
 bcrypt = Bcrypt()
@@ -33,12 +31,5 @@ def login():
 def logout():
     return logout_service()
 
-#
-# @user_bp.route("/delete_singer/")
-# def delete():
-#     singer_id_to_delete = 11
-#     singer_to_delete = Singer.query.get(singer_id_to_delete)
-#     db.session.delete(singer_to_delete)
-#     db.session.commit()
-#     return redirect("/")
+
 
