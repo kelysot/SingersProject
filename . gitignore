@@ -1,0 +1,36 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# SQLAlchemy migration repository
+migrations/
+!migrations/versions/
+migrations/versions/*.py
+!migrations/versions/__init__.py
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/fl
+.eggs/
+lib/
+lib64/
+parts
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# C extensions
+*.so
