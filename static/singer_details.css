@@ -1,0 +1,259 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin: 0;
+    flex-grow: 1;
+    text-align: center;
+    margin-right: 120px;
+}
+
+.logout-container {
+    margin-left: 20px;
+}
+
+.logout-btn {
+    display: inline-block;
+    padding: 10px;
+    background-color: #4a4e69;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.logout-btn:hover {
+    background-color: #1d3557;
+}
+
+
+.singer-details {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.details-body {
+    padding: 20px;
+    text-align: left;
+}
+
+.details-img {
+    max-width: 100%;
+    max-height: 400px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.details-item {
+    margin: 12px 0;
+    font-size: 18px;
+}
+
+.albums-list {
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+.album-item {
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+
+.album-img {
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 8px 8px 0 0;
+    object-fit: cover;
+    margin-top: 12px;
+}
+
+.album-details {
+    padding: 12px;
+}
+
+.best-albums h4 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.comment-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 700px;
+}
+
+.comment-list {
+    list-style: none;
+    padding: 0;
+}
+
+.comment-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.comment-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-meta {
+    color: #606770;
+    font-size: 12px;
+    margin: 5px;
+}
+
+.comment-text {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #343a40;
+}
+
+.add-comment-btn {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px;
+    background-color: #4a4e69;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.add-comment-btn:hover {
+    background-color: #1d3557;
+}
+
+.social-media-links {
+    margin-top: 10px;
+}
+
+.social-icon {
+    font-size: 24px;
+    margin-right: 10px;
+    color: #3b5998; /* Facebook blue color */
+}
+
+.social-icon.instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+    display: inline-block;
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.social-icon.tiktok {
+    background: linear-gradient(45deg, #ff0050 0%, #ff0050 25%, #00f2ea 50%, #00f2ea 75%, #000000 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+    display: inline-block;
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+
+#addCommentModal {
+    display: none;
+}
+
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    margin: 15% auto;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#addCommentModal h2 {
+    margin-bottom: 20px;
+}
+
+#addCommentModal label {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#addCommentModal textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#addCommentModal input[type="submit"] {
+    background-color: #4a4e69;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#addCommentModal input[type="submit"]:hover {
+    background-color: #1d3557;
+}

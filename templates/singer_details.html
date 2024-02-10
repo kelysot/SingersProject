@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Singer Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<link href="{{url_for('static', filename='singer_details.css')}}" rel="stylesheet">
+<body>
+    <header>
+        <div class="logout-container">
+            {% if session.user_id %}
+                <a href="{{ url_for('user.logout') }}" class="logout-btn">Logout</a>
+            {% else %}
+                <a href="{{ url_for('user.login') }}" class="logout-btn">Login</a>
+            {% endif %}
+            <a href="{{ url_for('singer.show_singers') }}" class="logout-btn">Home</a>
+        </div>
+        <h1>{{ singer.name }}</h1>
+    </header>
+    <div class="singer-details">
+        <div class="details-body">
+            <img class="details-img" src="{{ singer.photo }}" alt="{{ singer.name }} photo">
+            <p class="details-item"><strong>Genre:</strong> {{ singer.genre }}</p>
+            <p class="details-item"><strong>Birth Date:</strong> {{ singer.birth_date }}</p>
+            <p class="details-item"><strong>Active Since:</strong> {{ singer.active_since }}</p>
+               <div class="social-media-links">
+                    {% if singer.facebook_url %}
+                        <a href="{{ singer.facebook_url }}" class="social-icon" target="_blank"><i class="fab fa-facebook"></i></a>
+                    {% endif %}
+                    {% if singer.instagram_url %}
+                        <a href="{{ singer.instagram_url }}" class="social-icon instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                    {% endif %}
+                    {% if singer.tiktok_url %}
+                        <a href="{{ singer.tiktok_url }}" class="social-icon tiktok" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    {% endif %}
+               </div>
+
+        </div>
+        <div class="best-albums">
+            <h4>Best Albums: </h4>
+            <div class="albums-list">
+                {% for album in albums %}
+                    <div class="album-item">
+                        <img class="album-img" src="{{ album.photo }}" alt="{{ album.title }} cover">
+                        <div class="album-details">
+                            <p>{{ album.title }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="comments-section">
+        <div class="comment-card">
+            <h2>Reviews</h2>
+            <ul class="comment-list">
+                {% for comment in comments %}
+                    <li class="comment-item">
+                        <div class="comment-content">
+                            <span class="comment-meta">{{ comment.timestamp.strftime('%Y-%m-%d %H:%M') }}</span>
+                            <span class="comment-text"><strong>{{ comment.user.username }}:</strong> {{ comment.text }}</span>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+            {% if session.user_id %}
+                <button class="btn btn-primary add-comment-btn" onclick="openModal('addCommentModal')">Add Review</button>
+            {% endif %}
+        </div>
+         <div id="addCommentModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('addCommentModal')">&times;</span>
+                <h2>Add Review</h2>
+                <form method="post" action="{{ url_for('comment.add_comment', singer_id=singer.id) }}">
+                    <textarea name="comment_text" cols="30" rows="4" maxlength="105" required></textarea>
+                    <br>
+                    <input type="submit" value="Add Review">
+                </form>
+            </div>
+        </div>
+        <script>
+            // JavaScript functions to open and close the modal
+            function openModal(modalId) {
+                document.getElementById(modalId).style.display = 'block';
+            }
+
+            function closeModal(modalId) {
+                document.getElementById(modalId).style.display = 'none';
+            }
+
+            // Close the modal if the user clicks outside of it
+            window.onclick = function (event) {
+                if (event.target.className === 'modal') {
+                    event.target.style.display = 'none';
+                }
+            };
+        </script>
+    </div>
+</body>
+</html>

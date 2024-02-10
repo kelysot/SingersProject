@@ -1,0 +1,90 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: url("https://img.freepik.com/premium-photo/cheering-crowd-with-hands-air-enjoying-music-festival_522218-345.jpg");
+    background-size: cover;
+    background-color: #f7f7f7;
+    margin: 20px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    animation: fadeIn 1s forwards;
+}
+
+h1 {
+    font-family: 'Arial', sans-serif;
+    color: #1d3557;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.album-details {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+
+input[type="submit"] {
+    background-color: #4a4e69;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    transition: background-color 0.3s ease-in-out;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+input[type="submit"]:hover {
+    background-color: #1d3557;
+}

@@ -1,0 +1,117 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url("https://img.freepik.com/premium-photo/cheering-crowd-with-hands-air-enjoying-music-festival_522218-345.jpg");
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+form {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+form:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #1d3557;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #555;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.3s ease-in-out;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+input[type="submit"] {
+    background-color: #4a4e69;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    transition: background-color 0.3s ease-in-out;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+input[type="submit"]:hover {
+    background-color: #1d3557;
+}
+
+.messages {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: #e74c3c;
+    margin-bottom: 15px;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.register-link {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #219ebc;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+    color: #457b9d;
+}

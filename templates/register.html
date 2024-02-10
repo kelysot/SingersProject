@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="{{url_for('static', filename='register.css')}}" rel="stylesheet">
+</head>
+<body>
+    <form method="post" action="">
+        <h1>Register</h1>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <label for="username">Username:</label>
+        <input type="text" name="username" required pattern="[a-zA-Z0-9_]+" title="Only letters, numbers, and underscores are allowed">
+        <label for="email">Email:</label>
+        <input type="email" name="email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Enter a valid email address">
+        <label for="password">Password:</label>
+        <input type="password" name="password" required  minlength="8" title="Password must be at least 8 characters long">
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" name="confirm_password" required minlength="8" title="Password must be at least 8 characters long">
+        <input type="submit" value="Register">
+        <a class="login-link" href="{{ url_for('user.login') }}">Already have an account? Log in here.</a>
+    </form>
+</body>
+</html>

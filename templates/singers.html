@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Singers</title>
+</head>
+<link href="{{url_for('static', filename='singers.css')}}" rel="stylesheet">
+<body>
+     <header>
+         <div class="logout-container">
+            {% if session.user_id %}
+                <a href="{{ url_for('user.logout') }}" class="logout-btn">Logout</a>
+            {% else %}
+                <a href="{{ url_for('user.login') }}" class="logout-btn">Login</a>
+            {% endif %}
+         </div>
+        <h1>All Favorite Singers</h1>
+    </header>
+    <div class="card-container">
+        {% for singer in singers %}
+            <a href="{{ url_for('singer.singer_details', singer_id=singer.id) }}"  class="card">
+                <div class="card-header">
+                    <h3>{{ singer.name }}</h3>
+                </div>
+                <div class="card-body">
+                    <img src="{{ singer.photo }}" alt="{{ singer.name }} photo">
+                    <p><strong>Genre:</strong> {{ singer.genre }}</p>
+                    <p><strong>Birth Date:</strong> {{ singer.birth_date }}</p>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+</body>
+</html>
