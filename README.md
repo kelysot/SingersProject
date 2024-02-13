@@ -30,20 +30,25 @@ Before running the project, ensure you have the following prerequisites installe
 ## Installation
 
 1. Clone the repository:
-   bash
-   git clone https://github.com/kelysot/SingersFlaskProject.git
+   ```bash
+      git clone https://github.com/kelysot/SingersFlaskProject.git
 
 2. Create a python virtual environment
-   bash
-   python3 -m venv ./venv
+   ```bash
+      python3 -m venv ./venv
 
 3. Open the virtual environment
-   bash
-   source ./venv/bin/activate
+   - On Windows:
+     ```bash
+     .\venv\Scripts\activate
+
+   - On Unix or MacOS:
+     ```bash
+      source ./venv/bin/activate
    
 4. Install the required dependencies:
-   bash
-   pip install -r ./requirements.txt
+   ```bash
+      pip install -r ./requirements.txt
 5. Run flask app
 
 
