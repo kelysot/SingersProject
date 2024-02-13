@@ -13,7 +13,7 @@ def show_singers():
     return show_singers_service()
 
 
-@singer_bp.route("/singer_details/<singer_id>")
+@singer_bp.route("/singer_details/<singer_id>/")
 def singer_details(singer_id):
     return singer_details_service(singer_id)
 
