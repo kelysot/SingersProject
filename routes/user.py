@@ -27,7 +27,7 @@ def login():
     return render_template('login.html')
 
 
-@user_bp.route('/logout')
+@user_bp.route('/logout/')
 def logout():
     return logout_service()
 

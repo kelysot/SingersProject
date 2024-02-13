@@ -4,7 +4,7 @@ from services.comment import add_comment_service
 comment_bp = Blueprint('comment', __name__)
 
 
-@comment_bp.route('/singer/<int:singer_id>/add_comment', methods=['POST', 'GET'])
+@comment_bp.route('/singer/<int:singer_id>/add_comment/', methods=['POST', 'GET'])
 def add_comment(singer_id):
     user_id = session.get('user_id')
 
