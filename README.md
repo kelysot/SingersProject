@@ -4,7 +4,7 @@ This is a backend project designed to allows users to browse and review singers.
 
 It provides a REST API for submit reviews for various singer, user authentication, and various other essential functionalities. 
 
-This project is built with Python, FastAPI, and SQLite.
+This project is built with Python, Flask, and SQLite.
 
 
 ## Features
